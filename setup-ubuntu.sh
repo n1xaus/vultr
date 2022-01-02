@@ -1,4 +1,5 @@
 #!/bin/bash
+# Setup Ubuntu with Apache and secure SSH login
 
 echo "Installing Stuff"
 apt install apache2
