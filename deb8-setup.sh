@@ -27,16 +27,12 @@ apt-get install -y mysql-server apache2 libapache2-mod-php7.0 php7.0-cli php7.0-
 service apache2 restart
 a2enmod rewrite
 
-# Show versions
-apache2 -v
-php -v
-mysql -V
-
 # Create Dummy pages
 cd /var/www/html
 echo '<!DOCTYPE html><html><head><title>:P</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>h1{font-family: Times, serif;color: #2f2d2d;text-align: default;}p{font-family: Times, serif;font-size: 14px;text-align: default;color: #2f2d2d;}</style></head><body><h1>Hello,</h1><p>Check this out! <a href="https://n1xaus.substack.com/p/350-per-month-debian-system">This tutorial</a> will show you how I deployed this server. <br/><br/>- n1xaus</p></body></html>' > index.html
 echo "<?php phpinfo(); ?>" > nix.php
 cd ~
 
+apt upgrade -y --fix-missing
 apt-get autoremove -y
 reboot
