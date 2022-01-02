@@ -5,6 +5,8 @@
 # Editing Source List
 echo "deb http://http.us.debian.org/debian/ jessie main" > /etc/apt/sources.list
 echo "deb-src http://http.us.debian.org/debian/ jessie main" >> /etc/apt/sources.list
+echo "deb http://security.debian.org/ jessie/updates main" >> /etc/apt/sources.list
+echo "deb-src http://security.debian.org/ jessie/updates main" >> /etc/apt/sources.list
 echo "deb http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list
 echo "deb-src http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list
 echo "deb http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list
@@ -26,13 +28,9 @@ service apache2 restart
 a2enmod rewrite
 
 # Show versions
-echo
-echo
 apache2 -v
 php -v
 mysql -V
-echo
-echo
 
 # Create Dummy pages
 cd /var/www/html
@@ -40,4 +38,5 @@ echo '<!DOCTYPE html><html><head><title>:P</title><meta name="viewport" content=
 echo "<?php phpinfo(); ?>" > nix.php
 cd ~
 
-apt update; apt upgrade -y --fix-missing; apt-get autoremove -y
+apt-get autoremove -y
+reboot
