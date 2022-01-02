@@ -34,5 +34,13 @@ echo "<?php phpinfo(); ?>" > nix.php
 cd ~
 
 apt upgrade -y --fix-missing
+apt install ufw -y; ufw enable; ufw allow in "WWW"; ufw allow in "SSH"
+
+echo "What do you want the username to be?"
+read newuser
+adduser $newuser
+
 apt-get autoremove -y
-reboot
+
+echo "YOU SHOULD REBOOT THE MACHINE NOW AND EVERYTHING SHOULD BE ALL GOOD TO START BUILDING UP."
+
