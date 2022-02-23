@@ -1,7 +1,5 @@
 # vultr
 
-https://n1xaus.substack.com/p/cheap-linux-vps
-
 Signup to [Vultr](https://www.vultr.com/?ref=9019554)
 
 .
